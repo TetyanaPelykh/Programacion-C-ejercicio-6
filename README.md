@@ -1,11 +1,12 @@
 # Programacion-C-ejercicio-6
 Ejercicio 6 de programacion en C
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
-#define CATEGORY1 1					/* Category 1 id */
+#define CATEGORY1 1	            /* Category 1 id */
 #define CATEGORY2 2                 /* Category 2 id */
 #define CATEGORY3 3                 /* Category 3 id */
 
@@ -56,6 +57,7 @@ centro 1.
 distintas ciudades, mostrar mensaje indicando que los centros no pueden ser
 comparables entre sí.
 */
+
     printf("ENTER DATA FOR CENTER 1\n");
     readCenter(&center1);
 
@@ -97,10 +99,13 @@ comparables entre sí.
   }
 
 
+
 /* Exercise 2.1 Desarrollo de funciones/acciones. Desarrollar la acción readCenter(...) que reciba
 como parámetro de salida una variable de nombre center, de tipo tCoworkingCenter sin
 inicializar, y devuelva la misma variable con los campos informados con los datos leídos
 por el canal estándar de entrada */
+
+
 
 void readCenter(tCoworkingCenter *center)
 {
@@ -128,10 +133,17 @@ void readCenter(tCoworkingCenter *center)
 	center->hasAuditorium = (bool)intToBool;
 }
 
+
+
+
 /* Exercise 2.2 Desarrollo de funciones/acciones. Desarrollar la función/acción writeCenter (...).
 Esta recibe como parámetro de entrada una variable de nombre center, de tipo
 tCoworkingCenter ya inicializado y muestra por el canal estándar de salida los campos del
 centro. */
+
+
+
+
 
 void writeCenter(tCoworkingCenter center)
 {
@@ -147,6 +159,9 @@ void writeCenter(tCoworkingCenter center)
 	printf("HAS AUDITORIUM (0-FALSE, 1-TRUE): %d\n", center.hasAuditorium);	
 }
 
+
+
+
 /* Exercise 2.3 Desarrollo de funciones/acciones. Desarrollar la función/acción isAcceptableCenter
 (…). Esta recibe como parámetros una variable de nombre center, de tipo
 tCoworkingCenter inicializada, y dos variables price y distance de tipo real que
@@ -155,13 +170,18 @@ retorna verdadero si el centro tiene sala de reuniones o auditorio, y tanto
 su precio como su distancia al centro de la ciudad se encuentran dentro de los valores aceptables
 introducidos en los parámetros price y distance. */
 
+
+
+
 bool isAcceptableCenter  (tCoworkingCenter center, float price, float distance)
 {
 	return ((center.hasMeetingRooms || center.hasAuditorium)  &&
 			(center.distanceFromCityCenter <= distance) &&
 			(center.price <= price));
 }
-  
+
+
+
 /* Exercise 2.4 Desarrollo de funciones/acciones. Desarrollar la función/acción bestCenter(...).
 Esta recibe como parámetros dos variables, center1 y center2, de tipo tCoworkingCenter
 correspondientes a dos centros y los compara para ver cual es el mejor de ambos.
@@ -171,6 +191,9 @@ Para comparar los dos centros se seguirán los siguientes criterios en el orden 
 ● Tener una sala de reuniones es mejor.
 En caso de que haya coincidencia en el primer criterio (los dos centros tienen la misma
 categoría), se pasará al siguiente criterio, y así sucesivamente.*/
+
+
+
 
 int bestCenter (tCoworkingCenter center1, tCoworkingCenter center2)
 {
